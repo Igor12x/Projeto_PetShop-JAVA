@@ -77,7 +77,7 @@ public class TelaPetShop extends JFrame {
 		jmPesquisa = new JMenu ("Pesquisa");
 		jmiSair = new JMenuItem("Sair");
 		jmiCadastro = new JMenuItem("Cadastro");
-		jmiServicos = new JMenuItem ("Serviços");
+		jmiServicos = new JMenuItem ("Serviï¿½os");
 		jmiPesquisa = new JMenuItem ("Pesquisa");
 
 		//adicionar o menu na barra
@@ -99,7 +99,7 @@ public class TelaPetShop extends JFrame {
 
 
 
-
+//helo word
 	private void criarEventos() {
 
 		//criar o evento do menu sair

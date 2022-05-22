@@ -24,8 +24,7 @@ import classe.Cliente;
 
 public class PainelServicos extends JPanel {
 	private JLabel jlServicos, jlformaPagamento;
-	private JCheckBox jckBanho, jckTosaHigência, jckTosaVerao, jckTosaTesoura, jckTosaRaca,
-	jckTosaTotal, jckTrimming, jckCronogramaCapilar, jckHidratacao, jckRemocao, jckDesembolo, jckTaxi;
+	private JCheckBox jckBanho, jckTosaHigencia, jckTosaVerao, jckTosaTesoura, jckTosaRaca, jckTosaTotal, jckTrimming, jckCronogramaCapilar, jckHidratacao, jckRemocao, jckDesembolo, jckTaxi;
 	private JRadioButton jrbDebito, jrbCredito, jrbPix, jrbDinheiro;
 	private ImageIcon imagem;
 	private JButton jbCadastrar;
@@ -53,23 +52,23 @@ public class PainelServicos extends JPanel {
 		Font titulo2 = new Font("Arial", Font.CENTER_BASELINE, 28);
 		imagem = new ImageIcon(getClass().getResource(""));
 		imagem = new ImageIcon();
-		jlServicos = new JLabel("Tipo de Serviços");
+		jlServicos = new JLabel("Tipo de Serviï¿½os");
 		jlServicos.setFont(titulo2);
 		jlformaPagamento = new JLabel("Forma de pagamento");
 		jlformaPagamento.setFont(titulo);
 		jckBanho = new JCheckBox("Banho");
 		jckBanho.setFont(nome);
 		jckBanho.setOpaque(false);
-		jckTosaHigência = new JCheckBox("TosaHigência");
-		jckTosaHigência.setFont(nome);
-		jckTosaHigência.setOpaque(false);
-		jckTosaVerao = new JCheckBox("Tosa Verão");
+		jckTosaHigencia = new JCheckBox("TosaHigï¿½ncia");
+		jckTosaHigencia.setFont(nome);
+		jckTosaHigencia.setOpaque(false);
+		jckTosaVerao = new JCheckBox("Tosa Verï¿½o");
 		jckTosaVerao.setFont(nome);
 		jckTosaVerao.setOpaque(false);
 		jckTosaTesoura = new JCheckBox("Tosa Tesoura");
 		jckTosaTesoura.setFont(nome);
 		jckTosaTesoura.setOpaque(false);
-		jckTosaRaca = new JCheckBox("Tosa Raça");
+		jckTosaRaca = new JCheckBox("Tosa Raï¿½a");
 		jckTosaRaca.setFont(nome);
 		jckTosaRaca.setOpaque(false);
 		jckTosaTotal = new JCheckBox("Tosa Total");
@@ -81,10 +80,10 @@ public class PainelServicos extends JPanel {
 		jckCronogramaCapilar = new JCheckBox("Cronograma Capilar");
 		jckCronogramaCapilar.setFont(nome);
 		jckCronogramaCapilar.setOpaque(false);
-		jckHidratacao = new JCheckBox("Hidratação");
+		jckHidratacao = new JCheckBox("HidrataÃ§Ã£o");
 		jckHidratacao.setFont(nome);
 		jckHidratacao.setOpaque(false);
-		jckRemocao = new JCheckBox("Remoção de Sub pelo");
+		jckRemocao = new JCheckBox("RemoÃ§Ã£o de Sub pelo");
 		jckRemocao.setFont(nome);
 		jckRemocao.setOpaque(false);
 		jckDesembolo = new JCheckBox("Desembolo");
@@ -114,7 +113,7 @@ public class PainelServicos extends JPanel {
 				add(jlServicos);
 				add(jlformaPagamento);
 				add(jckBanho);
-				add(jckTosaHigência);
+				add(jckTosaHigencia);
 				add(jckTosaVerao);
 				add(jckTosaTesoura);
 				add(jckTosaRaca);
@@ -135,7 +134,7 @@ public class PainelServicos extends JPanel {
 				jlServicos.setBounds(150, 40, 250, 25);
 				jlformaPagamento.setBounds(400, 145, 180, 25);
 				jckBanho.setBounds(10, 145, 150, 25);
-				jckTosaHigência.setBounds(10, 170, 170, 25);
+				jckTosaHigencia.setBounds(10, 170, 170, 25);
 				jckTosaVerao.setBounds(10, 195, 150, 25);
 				jckTosaTesoura.setBounds(10, 220, 300, 25);
 				jckTosaRaca.setBounds(10, 245, 160, 25);
