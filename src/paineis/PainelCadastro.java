@@ -1,16 +1,27 @@
 package paineis;
 
+
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.List;
+
+
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+
+
 import classe.Cliente;
+
+
 
 
 public class PainelCadastro extends JPanel {
@@ -21,27 +32,33 @@ public class PainelCadastro extends JPanel {
 	private JButton jbCadastrar;
 	private ImageIcon imagem;
 	private List<Cliente> clientes;
-	
+
+
+
 	public PainelCadastro(List<Cliente> clientes) {
 		super();
 		this.clientes = clientes;
 		setSize(600,500);// largura e altura
 		setLayout(null);
-		setBackground(Color.GRAY);
+		setBackground(Color.LIGHT_GRAY);
 		iniciarComponentes();
 		criarEventos();
 	}
 
+
+
 	private void iniciarComponentes() {
 		// Criar objetos
-		
-		Font titulo = new Font("Arial", Font.CENTER_BASELINE, 28);	
+
+
+
+		Font titulo = new Font("Arial", Font.CENTER_BASELINE, 28);
 		Font nome = new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, 19);
 		imagem = new ImageIcon(getClass().getResource(""));
 		imagem = new ImageIcon();
 		jlNomecliente = new JLabel("Nome Cliente");
 		jlNomecliente.setFont(nome);
-		jlEndereco = new JLabel("Endereço");
+		jlEndereco = new JLabel("Endereco");
 		jlEndereco.setFont(nome);
 		jlBairro = new JLabel("Bairro");
 		jlBairro.setFont(nome);
@@ -59,13 +76,13 @@ public class PainelCadastro extends JPanel {
 		jlPet3.setFont(nome);
 		jlPet4 = new JLabel("Nome Pet");
 		jlPet4.setFont(nome);
-		jlRaca = new JLabel("Raça");
+		jlRaca = new JLabel("RaÃ§a");
 		jlRaca.setFont(nome);
-		jlRaca2 = new JLabel("Raça");
+		jlRaca2 = new JLabel("RaÃ§a");
 		jlRaca2.setFont(nome);
-		jlRaca3 = new JLabel("Raça");
+		jlRaca3 = new JLabel("RaÃ§a");
 		jlRaca3.setFont(nome);
-		jlRaca4 = new JLabel("Raça");
+		jlRaca4 = new JLabel("RaÃ§a");
 		jlRaca4.setFont(nome);
 		jlCadastro = new JLabel("Cadastro");
 		jlCadastro.setFont(titulo);
@@ -86,9 +103,13 @@ public class PainelCadastro extends JPanel {
 		jtfRaca4 = new JTextField();
 		jbCadastrar = new JButton("Cadastrar");
 		jbCadastrar.setFont(nome);
-		
+
+
+
 		//adicionar o objeto a tela
-		
+
+
+
 		add(jlNomecliente);
 		add(jlEndereco);
 		add(jlBairro);
@@ -119,7 +140,9 @@ public class PainelCadastro extends JPanel {
 		add(jtfRaca3);
 		add(jtfRaca4);
 		add(jbCadastrar);
-		
+
+
+
 		//dimencionar
 		jlCadastro.setBounds(200, 40, 150, 30);
 		jlNomecliente.setBounds(10, 120, 150, 25);
@@ -151,15 +174,81 @@ public class PainelCadastro extends JPanel {
 		jlRaca4.setBounds(430, 280, 80, 25);
 		jtfRaca4.setBounds(430, 305, 80, 25);
 		jbCadastrar.setBounds(200, 350, 200, 50);
-		
+
+
+
 	}
+
+
 
 	private void criarEventos() {
 		// criar eventos
-		
-		
+		jbCadastrar.addActionListener(new ActionListener() {
+
+
+
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				if (!jtfNomecliente.getText().isEmpty() && !jtfEndereco.getText().isEmpty() && !jtfBairro.getText().isEmpty() && !jtfCidade.getText().isEmpty()
+						&& !jtfCelular.getText().isEmpty()) {
+
+
+
+
+					String nomeCliente, endereco, bairro, cidade, celular, telefone, pet, pet2, pet3, pet4, raca, raca2, raca3, raca4;
+
+
+
+					//entradas
+					nomeCliente = jtfNomecliente.getText();
+					endereco = jtfEndereco.getText();
+					bairro = jtfBairro.getText();
+					cidade = jtfCidade.getText();
+					celular = jtfCelular.getText();
+					telefone = jtfTelefone.getText();
+					pet= jtfPet.getText();
+					pet2 = jtfPet2.getText();
+					pet3 = jtfPet3.getText();
+					pet4 = jtfPet4.getText();
+					raca = jtfRaca.getText();
+					raca2 = jtfRaca2.getText();
+					raca3 = jtfRaca3.getText();
+					raca4 = jtfRaca4.getText();
+
+
+
+					jtfNomecliente.setText("");
+					jtfEndereco.setText("");
+					jtfBairro.setText("");
+					jtfCidade.setText("");
+					jtfCelular.setText("");
+					jtfTelefone.setText("");
+					jtfPet.setText("");
+					jtfPet2.setText("");
+					jtfPet3.setText("");
+					jtfPet4.setText("");
+					jtfRaca.setText("");
+					jtfRaca2.setText("");
+					jtfRaca3.setText("");
+					jtfRaca4.setText("");
+
+
+
+					//guardar objeto numa lista
+					clientes.add(new Cliente(nomeCliente, celular, telefone, endereco, bairro, cidade, pet, pet2, pet3, pet4, raca,
+							raca2, raca3, raca4));
+
+
+
+				} else {
+					JOptionPane.showMessageDialog(null, "preencha todos os campos",
+							"IMPÃ‰RIO 4 PATAS", JOptionPane.ERROR_MESSAGE);
+
+
+
+
+				}
+			}
+		});
 	}
-	
-	
-	
 }
