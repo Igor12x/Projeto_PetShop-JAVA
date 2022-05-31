@@ -19,10 +19,9 @@ import classe.Cliente;
 import classe.Servicos;
 
 public class PainelMostrar extends JPanel {
-    private JLabel jlMostrar, jlimagem;
-
+    private JLabel jlMostrar, jlimagem, jlFundoImagem;
     private JButton jbMostrar;
-    private ImageIcon imagem;
+    private ImageIcon imagem, fundoImagem;;
     private JTextArea jtaMostrar;
     private JScrollPane jspMostrar;
     private List<Cliente> clientes = new ArrayList<>();
@@ -32,7 +31,7 @@ public class PainelMostrar extends JPanel {
         this.clientes = clientes;
         setSize(600, 500);// largura e altura
         setLayout(null);
-        setBackground(Color.LIGHT_GRAY);
+        setBackground(Color.lightGray);
         iniciarComponentes();
         criarEventos();
     }
@@ -42,12 +41,15 @@ public class PainelMostrar extends JPanel {
         Font titulo = new Font("Arial", Font.CENTER_BASELINE, 28);
         Font nome = new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, 18);
         imagem = new ImageIcon(getClass().getResource("/imagem/imagem3.png"));
-        jlimagem = new JLabel(imagem);
+		jlimagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
         jlMostrar = new JLabel("Mostrar");
         jlMostrar.setFont(titulo);
         jbMostrar = new JButton("Mostrar");
         jbMostrar.setFont(nome);
         jbMostrar.setForeground(Color.BLUE);
+        jbMostrar.setBackground(Color.white);
         jtaMostrar = new JTextArea();
         jtaMostrar.setEditable(false);
         jspMostrar = new JScrollPane(jtaMostrar);
@@ -56,7 +58,8 @@ public class PainelMostrar extends JPanel {
         add(jbMostrar);
         add(jspMostrar);
         add(jlimagem);
-
+		add(jlFundoImagem);
+        jlFundoImagem.setBounds(0, 0, 600, 500);
         jlimagem.setBounds(400, 20, 100, 100);
         jlMostrar.setBounds(200, 40, 250, 25);
         jbMostrar.setBounds(180, 145, 140, 50);

@@ -16,16 +16,15 @@ import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import classe.Cliente;
 import classe.Servicos;
 
 public class PainelServicos extends JPanel {
-	private JLabel jlServicos, jlFormaPagamento, jlData, jlHorario, jlNomeClienteServico, jlTipoServico, jlimagem;
+	private JLabel jlServicos, jlFormaPagamento, jlData, jlHorario, jlNomeClienteServico, jlTipoServico, jlimagem, jlFundoImagem;
 	private JTextField jtfData, jtfHorario, jtfNomeClienteServico, jtfTipoServico;
 	private JRadioButton jrbDebito, jrbCredito, jrbPix, jrbDinheiro;
 	private JTextArea jtaTipoServico;
 	private JScrollPane jspTipoServico;
-	private ImageIcon imagem;
+	private ImageIcon imagem, fundoImagem;
 	private JButton jbCadastrar;
 	private ButtonGroup bgFormaPagamento;
 	private List<Servicos> listaServico = new ArrayList<>();
@@ -47,6 +46,8 @@ public class PainelServicos extends JPanel {
 		Font titulo2 = new Font("Arial", Font.CENTER_BASELINE, 28);
 		imagem = new ImageIcon(getClass().getResource("/imagem/imagem3.png"));
 		jlimagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
 		jlServicos = new JLabel("Serviços");
 		jlServicos.setFont(titulo2);
 		jlFormaPagamento = new JLabel("Forma de pagamento");
@@ -77,18 +78,20 @@ public class PainelServicos extends JPanel {
 		jrbDinheiro.setOpaque(false);
 		jbCadastrar = new JButton("Cadastrar");
 		jbCadastrar.setFont(nome);
+		jbCadastrar.setBackground(Color.white);
+		jbCadastrar.setForeground(Color.BLUE);
 		bgFormaPagamento = new ButtonGroup();
 		jtaTipoServico = new JTextArea();
 		jspTipoServico = new JScrollPane(jtaTipoServico);
 
 		// adicionar o objeto a tela
+		add(jspTipoServico);
 		add(jlServicos);
 		add(jlFormaPagamento);
 		add(jlData);
 		add(jlNomeClienteServico);
 		add(jlHorario);
 		add(jlTipoServico);
-		add(jlimagem);
 		add(jtfTipoServico);
 		add(jtfHorario);
 		add(jtfData);
@@ -98,8 +101,12 @@ public class PainelServicos extends JPanel {
 		add(jrbPix);
 		add(jrbDinheiro);
 		add(jbCadastrar);
-		add(jspTipoServico);
+		add(jlimagem);
+		add(jlFundoImagem);
+		
+
 		// dimencionar
+		jlFundoImagem.setBounds(0, 0, 600, 500);
 		jlimagem.setBounds(400, 20, 100, 100);
 		jlServicos.setBounds(150, 40, 250, 25);
 		jlFormaPagamento.setBounds(370, 135, 180, 25);
@@ -108,7 +115,7 @@ public class PainelServicos extends JPanel {
 		jlNomeClienteServico.setBounds(10, 80, 200, 25);
 		jlTipoServico.setBounds(10, 145, 150, 25);
 		jspTipoServico.setBounds(10, 170, 150, 115);
-		jtfData.setBounds(170, 195, 140, 25);
+		jtfData.setBounds(170, 200, 140, 25);
 		jtfHorario.setBounds(170, 260, 140, 25);
 		jtfNomeClienteServico.setBounds(10, 105, 300, 25);
 		jrbDebito.setBounds(380, 175, 145, 25);

@@ -26,11 +26,11 @@ import classe.Cliente;
 
 public class PainelCadastro extends JPanel {
 	private JLabel jlNomecliente, jlEndereco, jlBairro, jlCidade, jlCelular, jlTelefone,
-	jlPet, jlPet2, jlPet3, jlPet4, jlRaca, jlRaca2, jlRaca3, jlRaca4, jlCadastro;
+	jlPet, jlPet2, jlPet3, jlPet4, jlRaca, jlRaca2, jlRaca3, jlRaca4, jlCadastro, jlimagem, jlFundoImagem;
 	private JTextField jtfNomecliente, jtfEndereco, jtfBairro, jtfCidade, jtfCelular, jtfTelefone,
 	jtfPet, jtfPet2, jtfPet3, jtfPet4, jtfRaca, jtfRaca2, jtfRaca3, jtfRaca4;
 	private JButton jbCadastrar;
-	private ImageIcon imagem;
+	private ImageIcon imagem, fundoImagem;;
 	private List<Cliente> clientes;
 
 
@@ -40,7 +40,7 @@ public class PainelCadastro extends JPanel {
 		this.clientes = clientes;
 		setSize(600,500);// largura e altura
 		setLayout(null);
-		setBackground(Color.LIGHT_GRAY);
+		setBackground(Color.lightGray);
 		iniciarComponentes();
 		criarEventos();
 	}
@@ -54,8 +54,10 @@ public class PainelCadastro extends JPanel {
 
 		Font titulo = new Font("Arial", Font.CENTER_BASELINE, 28);
 		Font nome = new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, 19);
-		imagem = new ImageIcon(getClass().getResource(""));
-		imagem = new ImageIcon();
+		imagem = new ImageIcon(getClass().getResource("/imagem/imagem3.png"));
+		jlimagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
 		jlNomecliente = new JLabel("Nome Cliente");
 		jlNomecliente.setFont(nome);
 		jlEndereco = new JLabel("Endereco");
@@ -102,6 +104,8 @@ public class PainelCadastro extends JPanel {
 		jtfRaca3 = new JTextField();
 		jtfRaca4 = new JTextField();
 		jbCadastrar = new JButton("Cadastrar");
+		jbCadastrar.setBackground(Color.white);
+		jbCadastrar.setForeground(Color.BLUE);
 		jbCadastrar.setFont(nome);
 
 
@@ -140,10 +144,13 @@ public class PainelCadastro extends JPanel {
 		add(jtfRaca3);
 		add(jtfRaca4);
 		add(jbCadastrar);
+		add(jlimagem);
+		add(jlFundoImagem);
 
 
 
 		//dimencionar
+		jlFundoImagem.setBounds(0, 0, 600, 500);
 		jlCadastro.setBounds(200, 40, 150, 30);
 		jlNomecliente.setBounds(10, 120, 150, 25);
 		jtfNomecliente.setBounds(10, 145, 300, 25);
@@ -174,6 +181,7 @@ public class PainelCadastro extends JPanel {
 		jlRaca4.setBounds(430, 280, 80, 25);
 		jtfRaca4.setBounds(430, 305, 80, 25);
 		jbCadastrar.setBounds(200, 350, 200, 50);
+		jlimagem.setBounds(400, 20, 100, 100);
 
 
 

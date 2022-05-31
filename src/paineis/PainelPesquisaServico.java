@@ -30,10 +30,10 @@ import classe.Servicos;
 
 public class PainelPesquisaServico extends JPanel {
 	
-	private JLabel jlPesuisa, jlNomeCliente, jlimagem;
+	private JLabel jlPesuisa, jlNomeCliente, jlimagem, jlFundoImagem;
 	private JTextField jtfNomeCliente;
 	private JButton jbPesquisa;
-	private ImageIcon imagem;
+	private ImageIcon imagem, fundoImagem;
 	private JTextArea jtaMostrar;
 	private JScrollPane jspMostrar;
 	private List<Servicos> listaServicos = new ArrayList<>();;
@@ -52,6 +52,8 @@ public class PainelPesquisaServico extends JPanel {
 		Font nome = new Font("Arial", Font.LAYOUT_LEFT_TO_RIGHT, 18);
 		imagem = new ImageIcon(getClass().getResource("/imagem/imagem3.png"));
 		jlimagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
 		jlPesuisa = new JLabel("PESQUISA SERVIÇO");
 		jlPesuisa.setFont(titulo);
 		jlNomeCliente = new JLabel("Nome do cliente");
@@ -59,6 +61,7 @@ public class PainelPesquisaServico extends JPanel {
 		jtfNomeCliente = new JTextField();
 		jbPesquisa = new JButton("Pesquisar");
 		jbPesquisa.setFont(nome);
+		jbPesquisa.setBackground(Color.white);
 		jbPesquisa.setForeground(Color.BLUE);
 		jtaMostrar = new JTextArea();
 		jtaMostrar.setEditable(false);
@@ -72,6 +75,8 @@ public class PainelPesquisaServico extends JPanel {
 		add(jbPesquisa);
 		add(jspMostrar);
 		add(jlimagem);
+		add(jlFundoImagem);
+		jlFundoImagem.setBounds(0, 0, 600, 500);
 		
 		//dimencionar
 		jlimagem.setBounds(400, 20, 100, 100);

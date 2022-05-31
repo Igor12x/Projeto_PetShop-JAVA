@@ -39,11 +39,11 @@ import paineis.PainelServicos;
 
 
 public class TelaPetShop extends JFrame {
-	private JLabel jlImagem;
-	private ImageIcon imagem;
+	private JLabel jlImagem, jlFundoImagem;
+	private ImageIcon imagem, fundoImagem;
 	private JMenuBar jmbBarra;
 	private JMenu jmArquivo, jmCadastro,jmExibir;
-	private JMenuItem jmiSair, jmiCadastro, jmiServicos, jmiPesquisaCadastro, jmiPesquisaServico, jmiDeletar, jmimostrar;
+	private JMenuItem jmiSair, jmiCadastro, jmiServicos, jmiPesquisaCadastro, jmiPesquisaServico, jmiDeletar, jmiMostrar;
 	private Container contentPane;
 	private List<Cliente> clientes = new ArrayList<>();// matriz dinamica
 	private List<Servicos> listaServicos = new ArrayList<>();
@@ -56,7 +56,7 @@ public class TelaPetShop extends JFrame {
 		super(title);
 		setSize(600, 500);// largura e altura
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//inserir uma cor
-		getContentPane().setBackground(Color.lightGray);
+		getContentPane().setBackground(Color.BLUE);
 		iniciarComponentes();
 		criarEventos();
 	
@@ -65,6 +65,10 @@ public class TelaPetShop extends JFrame {
 
 	// Objetos
 	private void iniciarComponentes() {
+		imagem = new ImageIcon(getClass().getResource("/imagem/ImagemFundo.png"));
+        jlImagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
 		jmbBarra = new JMenuBar();
 		setJMenuBar(jmbBarra);
 		contentPane = getContentPane();// devolve um container uma tela
@@ -77,7 +81,7 @@ public class TelaPetShop extends JFrame {
 		jmiPesquisaCadastro = new JMenuItem ("Pesquisa-Cadastro");
 		jmiPesquisaServico = new JMenuItem("Pesquisa-Servico");
 		jmiDeletar = new JMenuItem ("Deletar");
-		jmimostrar = new JMenuItem ("Mostrar");
+		jmiMostrar = new JMenuItem ("Mostrar");
 		
 		//adicionar o menu na barra
 		jmbBarra.add(jmArquivo);
@@ -95,7 +99,16 @@ public class TelaPetShop extends JFrame {
 		jmExibir.add(jmiPesquisaCadastro);
 		jmExibir.add(jmiPesquisaServico);
 		jmExibir.add(jmiDeletar);
-		jmExibir.add(jmimostrar);
+		jmExibir.add(jmiMostrar);
+
+	
+		add(jlImagem);
+		add(jlFundoImagem);
+		
+
+		jlFundoImagem.setBounds(0, 0, 600, 500);
+		jlImagem.setBounds(140, 75, 300, 200);
+		
 	}
 
 
@@ -203,7 +216,7 @@ public class TelaPetShop extends JFrame {
 			}
 		});
 
-		jmimostrar.addActionListener(new ActionListener() {
+		jmiMostrar.addActionListener(new ActionListener() {
 
 
 

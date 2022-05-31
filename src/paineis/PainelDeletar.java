@@ -20,9 +20,9 @@ import classe.Cliente;
 
 public class PainelDeletar extends JPanel {
 	private List<Cliente> clientes;
-	private JLabel jlDeletar, jlIndice, jlimagem;
+	private JLabel jlDeletar, jlIndice, jlimagem, jlFundoImagem;
 	private JTextField jtfIndice;
-	private ImageIcon imagem;
+	private ImageIcon imagem, fundoImagem;
 	private JButton jbDeletar;
 
 	public PainelDeletar(List<Cliente> clientes) {
@@ -43,6 +43,8 @@ public class PainelDeletar extends JPanel {
 		Font titulo2 = new Font("Arial", Font.CENTER_BASELINE, 16);
 		imagem = new ImageIcon(getClass().getResource("/imagem/imagem3.png"));
 		jlimagem = new JLabel(imagem);
+		fundoImagem = new ImageIcon(getClass().getResource("/imagem/papelParede.png"));
+        jlFundoImagem = new JLabel(fundoImagem);
 		jlDeletar = new JLabel("Deletar");
 		jlDeletar.setFont(getFont());
 		jlDeletar.setFont(titulo);
@@ -55,12 +57,15 @@ public class PainelDeletar extends JPanel {
 		jbDeletar.setForeground(Color.BLUE);
 		
 		
-		add(jlimagem);
+
 		add(jlDeletar);
 		add(jlIndice);
 		add(jtfIndice);
 		add(jbDeletar);
+		add(jlimagem);
+		add(jlFundoImagem);
 		
+		jlFundoImagem.setBounds(0, 0, 600, 500);
 		jlimagem.setBounds(400, 20, 100, 100);
 		jlDeletar.setBounds(190, 80, 150, 30);
 		jlIndice.setBounds(140, 170, 200, 20);
