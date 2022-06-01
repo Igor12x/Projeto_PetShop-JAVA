@@ -119,13 +119,13 @@ public class PainelServicos extends JPanel {
 		jlServicos.setBounds(150, 40, 250, 25);
 		jlFormaPagamento.setBounds(370, 135, 180, 25);
 		jlData.setBounds(170, 185, 145, 25);
-		jlHorario.setBounds(170, 235, 145, 25);
+		jlHorario.setBounds(170, 135, 140, 25);
 		jlNomeClienteServico.setBounds(10, 80, 200, 25);
 		jlTipoServico.setBounds(10, 135, 150, 25);
-		jlPreco.setBounds(170, 135, 140, 25);
-		jtfPreco.setBounds(170, 160, 140, 25);
+		jlPreco.setBounds(170, 235, 145, 25);
+		jtfPreco.setBounds(170, 260, 140, 25);
 		jtfData.setBounds(170, 210, 140, 25);
-		jtfHorario.setBounds(170, 260, 140, 25);
+		jtfHorario.setBounds(170, 160, 140, 25);
 		jtfNomeClienteServico.setBounds(10, 105, 300, 25);
 		jrbDebito.setBounds(380, 175, 145, 25);
 		jrbCredito.setBounds(380, 200, 145, 25);
