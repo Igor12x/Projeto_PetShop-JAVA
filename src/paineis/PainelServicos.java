@@ -142,14 +142,16 @@ public class PainelServicos extends JPanel {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (!jtfNomeClienteServico.getText().isEmpty() && !jtfData.getText().isEmpty()
-						&& !jtfHorario.getText().isEmpty() && !jtaTipoServico.getText().isEmpty()) {
+						&& !jtfHorario.getText().isEmpty() && !jtaTipoServico.getText().isEmpty() && !jtfPreco.getText().isEmpty()) {
 
 					String tipoPagamento = null, nomeClienteServico, data, horario, tipoServico;
+					float preco;
 
 					nomeClienteServico = jtfNomeClienteServico.getText();
 					data = jtfData.getText();
 					horario = jtfHorario.getText();
 					tipoServico = jtaTipoServico.getText();
+					preco = Float.parseFloat(jtfPreco.getText());
 
 					if (jrbCredito.isSelected())
 						tipoPagamento = "Crédito";
@@ -160,7 +162,7 @@ public class PainelServicos extends JPanel {
 					if (jrbPix.isSelected())
 						tipoPagamento = "Pix";
 
-					listaServico.add(new Servicos(tipoPagamento, nomeClienteServico, data, horario, tipoServico));
+					listaServico.add(new Servicos(tipoPagamento, nomeClienteServico, data, horario, tipoServico, preco));
 
 					jtfNomeClienteServico.setText("");
 					jtfData.setText("");
