@@ -19,8 +19,8 @@ import javax.swing.JTextField;
 import classe.Servicos;
 
 public class PainelServicos extends JPanel {
-	private JLabel jlServicos, jlFormaPagamento, jlData, jlHorario, jlNomeClienteServico, jlTipoServico, jlimagem, jlFundoImagem;
-	private JTextField jtfData, jtfHorario, jtfNomeClienteServico, jtfTipoServico;
+	private JLabel jlServicos, jlFormaPagamento, jlData, jlHorario, jlNomeClienteServico, jlTipoServico, jlPreco, jlimagem, jlFundoImagem;
+	private JTextField jtfData, jtfHorario, jtfNomeClienteServico, jtfTipoServico, jtfPreco;
 	private JRadioButton jrbDebito, jrbCredito, jrbPix, jrbDinheiro;
 	private JTextArea jtaTipoServico;
 	private JScrollPane jspTipoServico;
@@ -60,10 +60,13 @@ public class PainelServicos extends JPanel {
 		jlHorario.setFont(nome);
 		jlTipoServico = new JLabel("Tipo do serviço");
 		jlTipoServico.setFont(nome);
+		jlPreco = new JLabel("Valor total");
+		jlPreco.setFont(nome);
 		jtfTipoServico = new JTextField();
 		jtfHorario = new JTextField();
 		jtfData = new JTextField();
 		jtfNomeClienteServico = new JTextField();
+		jtfPreco = new JTextField();
 		jrbDebito = new JRadioButton("Debito");
 		jrbDebito.setFont(nome);
 		jrbDebito.setOpaque(false);
@@ -92,7 +95,9 @@ public class PainelServicos extends JPanel {
 		add(jlNomeClienteServico);
 		add(jlHorario);
 		add(jlTipoServico);
+		add(jlPreco);
 		add(jtfTipoServico);
+		add(jtfPreco);
 		add(jtfHorario);
 		add(jtfData);
 		add(jtfNomeClienteServico);
@@ -104,18 +109,22 @@ public class PainelServicos extends JPanel {
 		add(jlimagem);
 		add(jlFundoImagem);
 		
+		
+
+		
 
 		// dimencionar
 		jlFundoImagem.setBounds(0, 0, 600, 500);
 		jlimagem.setBounds(400, 20, 100, 100);
 		jlServicos.setBounds(150, 40, 250, 25);
 		jlFormaPagamento.setBounds(370, 135, 180, 25);
-		jlData.setBounds(170, 170, 145, 25);
+		jlData.setBounds(170, 185, 145, 25);
 		jlHorario.setBounds(170, 235, 145, 25);
 		jlNomeClienteServico.setBounds(10, 80, 200, 25);
-		jlTipoServico.setBounds(10, 145, 150, 25);
-		jspTipoServico.setBounds(10, 170, 150, 115);
-		jtfData.setBounds(170, 200, 140, 25);
+		jlTipoServico.setBounds(10, 135, 150, 25);
+		jlPreco.setBounds(170, 135, 140, 25);
+		jtfPreco.setBounds(170, 160, 140, 25);
+		jtfData.setBounds(170, 210, 140, 25);
 		jtfHorario.setBounds(170, 260, 140, 25);
 		jtfNomeClienteServico.setBounds(10, 105, 300, 25);
 		jrbDebito.setBounds(380, 175, 145, 25);
@@ -123,6 +132,7 @@ public class PainelServicos extends JPanel {
 		jrbPix.setBounds(380, 225, 145, 25);
 		jrbDinheiro.setBounds(380, 250, 145, 25);
 		jbCadastrar.setBounds(340, 290, 180, 50);
+		jspTipoServico.setBounds(10, 160, 150, 125);
 
 	}
 
