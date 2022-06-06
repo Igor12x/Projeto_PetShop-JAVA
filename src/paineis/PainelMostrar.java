@@ -75,7 +75,7 @@ public class PainelMostrar extends JPanel {
             public void actionPerformed(ActionEvent e) {
                 jtaMostrar.setText("\t*****Pet Shop******\n");
                 for (Cliente cliente : clientes) {
-                    jtaMostrar.append(cliente.mostrarDados());
+                    jtaMostrar.append((clientes.indexOf(cliente)+1) + "- Indice" + cliente.mostrarDados());
                     for (Servicos servicos : listaServico) {
                         jtaMostrar.append(servicos.mostrarDados());
                     }

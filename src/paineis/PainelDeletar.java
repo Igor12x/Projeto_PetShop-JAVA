@@ -48,7 +48,7 @@ public class PainelDeletar extends JPanel {
 		jlDeletar = new JLabel("Deletar");
 		jlDeletar.setFont(getFont());
 		jlDeletar.setFont(titulo);
-		jlIndice = new JLabel("Digite o nome do Cliente");
+		jlIndice = new JLabel("Digite número do indice");
 		jtfIndice = new JTextField();
 		jlIndice.setFont(titulo2);
 		jbDeletar = new JButton("Deletar");

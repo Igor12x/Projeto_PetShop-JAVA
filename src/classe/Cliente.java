@@ -47,8 +47,8 @@ this.raca4 = raca4;
 public String mostrarDados() {
 return "\nCliente: "+ this.nomeCliente + "\nCelular: "
 + this.celular + "\nTelefone: " + this.telefone + "\nEndereço: " + this.endereco +
-"\nBairro: " + this.bairro + "\nNome Pet: " + this.pet + "\nNome Pet: " + this.pet2 + "\nNome Pet: " + this.pet3 + "\nNome Pet: " + this.pet4 +
-"\nRaça: " + this.raca + "\nRaça: " + this.raca2 + "\nRaça: " + this.raca3 + "\nRaça: " + this.raca4;
+"\nBairro: " + this.bairro + "\nNome Pet: " + this.pet +  "\nRaça: " + this.raca + "\nNome Pet: " + this.pet2 + "\nRaça: " + this.raca2 + "\nNome Pet: " + this.pet3 +   "\nRaça: " + this.raca3 + "\nNome Pet: " + this.pet4 +
+ "\nRaça: " + this.raca4;
 }
 public String getNomeCliente() {
 return nomeCliente;

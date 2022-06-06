@@ -168,6 +168,7 @@ public class PainelServicos extends JPanel {
 					jtfData.setText("");
 					jtfHorario.setText("");
 					jtaTipoServico.setText("");
+					jtfPreco.setText("");
 
 				} else {
 					JOptionPane.showMessageDialog(null, "preencha todos os campos",

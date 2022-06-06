@@ -25,8 +25,8 @@ private String tipoServico;
 
 
     public String mostrarDados() {
-		return "/nCliente: " + this.nomeClienteServico + "/nTipo do servico: /n" + this.tipoServico + "/nPreco: " + this.preco
-        + "/nTipo de pagamento: " + this.tipoPagamento + "/nData: " + this.data + "/nHorário: " + this.horario;
+		return "\nCliente: " + this.nomeClienteServico + "\nTipo do servico: \n" + this.tipoServico + "\nPreco: " + this.preco
+        + "\nTipo de pagamento: " + this.tipoPagamento + "\nData: " + this.data + "\nHorário: " + this.horario;
 	}
 
 
